@@ -10,8 +10,6 @@ async function updateProject() {
   for (var a = 0; a < projectArr.length; a++) {
     const result = await featchData(projectArr[a].fullName)
     const update = await ProjectModel.findByIdAndUpdate(projectArr[a].id,{...result})
-    console.log(a)
-    console.log(update)
   }
 }
 

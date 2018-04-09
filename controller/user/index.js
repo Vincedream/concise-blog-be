@@ -31,6 +31,7 @@ class UserController {
    */
   static async login(ctx) {
     const { username, password} = ctx.request.body
+    console.log(username,password)
     const user = await UserModel.findOne({ username });
     const checkPwd = bcrypt.compareSync(password, user.password)
     if (checkPwd) {

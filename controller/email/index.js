@@ -1,0 +1,2 @@
+const SubscribeController = require('./sendSubsc')
+

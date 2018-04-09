@@ -30,9 +30,9 @@ class CommentController {
   /**
    * 添加订阅用户
    */
-
   static async addSubscribe(email, ctx){
     const userEmail = await SubscribeModel.find({email}).catch( e => ctx.throw(500))
+    // 防止重复添加
     if (userEmail.length === 0) {
       SubscribeModel.create({email}).catch(e => ctx.throw(500))
     }
